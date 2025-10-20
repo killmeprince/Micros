@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-messages
+      author: kmp
+      changes:
+        - createTable:
+            tableName: messages
+            columns:
+              - column:
+                  name: id
+                  type: varchar(64)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(32)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: payload
+                  type: text
+                  constraints:
+                    nullable: true
+              - column:
+                  name: ts
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - createIndex:
+            tableName: messages
+            indexName: idx_messages_ts
+            columns:
+              - column:
+                  name: ts

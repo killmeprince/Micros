@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: service_b
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+
+app:
+  c-url: ${SERVICE_C_URL}
+
+server:
+  port: 8080

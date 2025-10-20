@@ -1,0 +1,2 @@
+rootProject.name = 'microservices'
+include 'service_a', 'service_b', 'service_c'
